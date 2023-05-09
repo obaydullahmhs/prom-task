@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prom-task-deployment
+  labels:
+    app: prom-task
+spec:
+  selector:
+    matchLabels:
+      app: prom-task
+  template:
+    metadata:
+      labels:
+        app: prom-task
+    spec:
+      containers:
+        - name: prom-task
+          image: obaydullahmhs/prom-task
+          ports:
+            - containerPort: 8090

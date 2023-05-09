@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prom-task-service
+  labels:
+    app: prom-task
+spec:
+  selector:
+    app: prom-task
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
+      name: web
